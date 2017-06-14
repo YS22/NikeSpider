@@ -12,12 +12,12 @@ regHead= {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (
           'Referer':'https://www.adidas.com.cn/customer/account/create/'}
 
 
-html=requests.get(regUrl,headers=regHead)
-#print html.text
+html=requests.get(regUrl,headers=regHead).text
+#print html
 
 soup=BeautifulSoup(html,'html.parser')
-token=item.select('input')[0]['value']
-print token
+tokens=soup.select('input')[1]['value']
+print tokens
 
 # regData={
 
