@@ -1,4 +1,4 @@
-#流程
+# 流程
 ## 模拟用户注册登陆
 - 目标网站
 - 注册和登陆信息
@@ -62,10 +62,28 @@ agree_terms
 ```
 
 # 核心
-- 模拟注册登陆的逻辑要清楚
+- 模拟注册登陆的过程要清楚
 
 # 任务
 - 完成3个网站的注册登陆
 
 # 进度
-- nike网站完成
+- nike网站大致完成
+
+
+
+模拟数据
+         'token':token,
+         'firstname':'yangsheng17',
+         'mobile':'17789563932',
+         'gender':'1',
+         'day':'2',
+         'year':'1994',
+         'dob':'1994-3-2',
+         'osolCatchaTxt':vcode,
+         'osolCatchaTxtInst':1,
+         'email':'cky12t@qq.com',
+         'username':'yanhggj',
+         'password':'112358yS',
+         'confirmation':'112358yS',
+         'agree_terms':1
