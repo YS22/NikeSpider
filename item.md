@@ -60,6 +60,7 @@ password
 confirmation(密码确认)
 agree_terms
 ```
+- regData中mobile,email,username在注册字段是唯一的
 
 # 核心
 - 模拟注册登陆的过程要清楚
@@ -72,18 +73,7 @@ agree_terms
 
 
 
-模拟数据
-         'token':token,
-         'firstname':'yangsheng17',
-         'mobile':'17789563932',
-         'gender':'1',
-         'day':'2',
-         'year':'1994',
-         'dob':'1994-3-2',
-         'osolCatchaTxt':vcode,
-         'osolCatchaTxtInst':1,
-         'email':'cky12t@qq.com',
-         'username':'yanhggj',
-         'password':'112358yS',
-         'confirmation':'112358yS',
-         'agree_terms':1
+
+
+
+
