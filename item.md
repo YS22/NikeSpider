@@ -62,6 +62,13 @@ agree_terms
 ```
 - regData中mobile,email,username在注册字段是唯一的
 
+# apple
+## 注册问题
+- 三问三答
+- 邮箱验证
+- 验证码(干扰线，重叠)
+
+
 # 核心
 - 模拟注册登陆的过程要清楚
 
@@ -70,6 +77,7 @@ agree_terms
 
 # 进度
 - nike网站大致完成
+- adidas网站大致完成
 
 
 
