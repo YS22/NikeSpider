@@ -1,5 +1,6 @@
 # -*- coding: utf-8 -*-
 import requests
+#from lxml import etree
 from bs4 import BeautifulSoup
 import json
 import pytesseract
@@ -66,14 +67,30 @@ head= {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHT
        'cookie':str(loginCookie)
        }
 data={"login[username]":'yeelink4701',"login[password]":"112358yS",'send':''}
-loginHtml = requests.post(loginUrl,data=data,headers = head).text
-print loginHtml
+loginHtml = requests.post(loginUrl,data=data,headers = head)
+#print loginHtml
+loginCookie=loginHtml.cookies
 
-# indexUrl='http://www.adidas.com.cn/'
-# indexHtml=requests.get(indexUrl,headers=head,cookies=cookies)
-# cookie=indexHtml.cookies
-# afterUrl='http://www.adidas.com.cn/checkout/cart/'
 
-# afterHtml=requests.get(afterUrl,cookies=cookies,headers=indexhead)
-# print afterHtml.text
+#添加购物车
+addUrl='http://www.adidas.com.cn/checkout/cart/add/'
+addHead={'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36',
+		 'Referer': 'https://www.adidas.com.cn/customer/account/login/',
+		 'cookie':str(loginCookie)
+		  }
 
+spUrl='http://www.adidas.com.cn/bj9898'
+spHtml=requests.get(spUrl,headers=addHead).text
+#print spHtml
+soup=BeautifulSoup(spHtml,'html.parser')
+token=soup.select('')
+print token
+
+
+# data={'token':
+# 	  'isajax':
+# 	  'rerelease2':
+# 	  'product':
+# 	  'super_attribute[184]':
+# 	  'qty':
+# }
