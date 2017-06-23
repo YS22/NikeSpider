@@ -15,20 +15,6 @@ cookie=html.cookies
 captchaUrl='https://appleid.apple.com/captcha'
 captchaHead={'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36',
 	  'Referer':'https://appleid.apple.com/account?&localang=CN-ZH&app_id=2083&returnURL=https%3A%2F%2Fsecure1.store.apple.com%2Fcn%2Fshop%2Fsign_in%3Fc%3DaHR0cHM6Ly93d3cuYXBwbGUuY29tL2NuLy8_YWZpZD1wMjM4JTdDMVo2eXQ0aUJ2LWRjX210aWRfMTg3MDd2eHUzODQ4NF9wY3JpZF8xNDk3MjQ0MDkyOV8mY2lkPWFvcy1jbi1rd2JhLWJyYW5kfDFhb3M3YTc4YmJlZTZhMDhlODBiYTAyMjU3MmQzZDM3NmIyMTIyYTU3ZjM4%26r%3DSCDHYHP7CY4H9XK2H%26s%3DaHR0cHM6Ly93d3cuYXBwbGUuY29tL2NuLy8_YWZpZD1wMjM4JTdDMVo2eXQ0aUJ2LWRjX210aWRfMTg3MDd2eHUzODQ4NF9wY3JpZF8xNDk3MjQ0MDkyOV8mY2lkPWFvcy1jbi1rd2JhLWJyYW5kfDFhb3M3YTc4YmJlZTZhMDhlODBiYTAyMjU3MmQzZDM3NmIyMTIyYTU3ZjM4',
-	  # 'Content-Type':'application/json'
-	  # 'Accept-Encoding':'gzip, deflate',
-	  # 'Accept-Language':'zh-CN,zh;q=0.8',
-	  # 'Connection':'keep-alive',
-	  # 'Content-Length':'16',
-	  # 'Origin':'https://appleid.apple.com',
-	  # 'Host':'appleid.apple.com',
-	  # 'Accept':'application/json, text/javascript, */*; q=0.01',
-	  # 'scnt':'2d1062ea5e9318fcc3c475ba27a776e9',
-	  # 'X-Apple-Api-Key':'cbf64fd6843ee630b463f358ea0b707b',
-	  # 'X-Apple-App-Id':'2083',
-	  # 'X-Apple-I-FD-Client-Info':'{"U":"Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36","L":"zh-CN","Z":"GMT+08:00","V":"1.1","F":"Vta44j1e3NlY5BSo9z4ofjb75PaK4Vpjt.gEngMQEjZrVglE4YcA.0Yz3ccbbJYMLgiPFU77qZoOSix5ezdstlYysrhsui602QnJ54CacrhO3f9p_nH1u_eH3BhxUC550ialT0iakA2zGUMnGWFfwMHDCQyFA2wv4qnvtCsABIlNu1k.Nzl998tp7ppfAaZ6m1CdC5MQjGejuTDRNziCvTDfWkFqwp0WIOeCvLG9mhORoVijvw2Wwjoc05yK43xhDnmccbguaDeyjaY2ftckuyPBDjaY1HGOg3ZLQ0Fxid0EJeY.KUfSHolk2dUf.j7J1gBZEMgzH_y3Cmx_B4WugMAphYjRELy.EKY.6ekcW9R.tGUf.j7N_NO7TdNMtVEn9icCmx_B4W1kl1BQLz4mvmfTT9oaSumKkpjlRiwerbXh8bUtThjqsGY5DuV25BNnOVgw24uy.0l."}',
-	  # 'X-Apple-ID-Session-Id':'EFACC76BD51DD2C42C121F8E4BC20A7B'
-	  # 'X-Requested-With':'XMLHttpRequest'
 	  'cookie':str(cookie)
 	  }
 payload={'type': "IMAGE"}
