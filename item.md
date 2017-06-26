@@ -128,5 +128,24 @@ qty:1(数量)
 - adidas网站大致完成
 
 
-
-
+# browser=webdriver.Chrome()
+    # browser.get('http://store.nike.com/cn/zh_cn/')
+    # time.sleep(5)
+    # indexLogin_btn=browser.find_element_by_xpath('html/body/div[6]/nav/div[1]/ul[2]/li[2]/button')
+    # indexLogin_btn.click()
+    # register_btn = browser.find_element_by_xpath('html/body/div[11]/div[1]/div[1]/div/div[1]/div/div[3]/form/div[7]/a')
+    # register_btn.click()
+    # email_input=browser.find_element_by_xpath('html/body/div[11]/div[1]/div[1]/div/div[1]/div/div[2]/form/div[1]/input')
+    # email_input.clear()
+    # email_input.send_keys('cky111@qq.com')
+    # password_input=browser.find_element_by_xpath('html/body/div[11]/div[1]/div[1]/div/div[1]/div/div[2]/form/div[2]/input')
+    # password_input.clear()
+    # password_input.send_keys('Nikecky111')
+    # xing_input=browser.find_element_by_xpath('html/body/div[11]/div[1]/div[1]/div/div[1]/div/div[2]/form/div[3]/input')
+    # xing_input.clear()
+    # xing_input.send_keys('yang')
+    # ming_input=browser.find_element_by_xpath('html/body/div[11]/div[1]/div[1]/div/div[1]/div/div[2]/form/div[4]/input')
+    # ming_input.clear()
+    # ming_input.send_keys('sheng')
+    # year_btn=browser.find_element_by_xpath('html/body/div[11]/div[1]/div[1]/div/div[1]/div/div[2]/form/div[5]/div[3]/div[1]/select')
+    # year_btn.click()
