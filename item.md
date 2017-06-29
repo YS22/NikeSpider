@@ -30,17 +30,20 @@
 - 需要提交的字段
 ```
 "username":"1774507013@qq.com" ,
-"password":"112358yS",
+"password":"112358yS"(写死)
 "lastName:":"杨",
 "firstName":"胜",
-"dateOfBirth":"1994-01-20",
-"country":"CN",
+"dateOfBirth":"1994-01-20"(写死)
+"country":"CN"(写死)
 "mobileNumber":"17786493932",
-"gender":"male",
-"receiveEmail":true
+"gender":"male"(写死)
+"receiveEmail":true(写死)
 ```
+- 耐克中邮箱和手机号要生成，其余可以写死
+- 无验证码
+
 ### 添加购物车流程
-- 进入需要购买商品链接:https://www.nike.com/cn/launch/
+- 进入需要购买商品链接
 - 提交颜色，尺码等信息加入购物车
 - 同一种商品不同用户加入购物车时post的数据
 ####同一个人同一种商品(相同upm,analysisUserId,guid,cookies,deviceAtlas,platform,source  不同：t,event里面的t)
@@ -79,21 +82,21 @@
 - 需要提交的字段
 ```
 token(html中获取)
-firstname(真实姓名)
-mobile
-gender
-day
-year
-dob(出生日期)
-osolCatchaTxt
-osolCatchaTxtInst
+firstname：杨胜
+mobile：17786493932
+gender：male
+day：2
+year：1994
+dob：1994-3-2
+osolCatchaTxt(验证码)
+osolCatchaTxtInst(不用管)
 email
-username
+username:yangsheng
 password
 confirmation(密码确认)
-agree_terms
+agree_terms(不用管)
 ```
-- regData中mobile,email,username在注册字段是唯一的
+- 阿迪达斯中mobile,email,username要生成，其余可以写死或页面爬取
 
 ### 加入购物车问题
 - 
@@ -123,29 +126,19 @@ qty:1(数量)
 # 任务
 - 完成3个网站的注册登陆
 
-# 进度
-- nike网站大致完成
-- adidas网站大致完成
 
 
-# browser=webdriver.Chrome()
-    # browser.get('http://store.nike.com/cn/zh_cn/')
-    # time.sleep(5)
-    # indexLogin_btn=browser.find_element_by_xpath('html/body/div[6]/nav/div[1]/ul[2]/li[2]/button')
-    # indexLogin_btn.click()
-    # register_btn = browser.find_element_by_xpath('html/body/div[11]/div[1]/div[1]/div/div[1]/div/div[3]/form/div[7]/a')
-    # register_btn.click()
-    # email_input=browser.find_element_by_xpath('html/body/div[11]/div[1]/div[1]/div/div[1]/div/div[2]/form/div[1]/input')
-    # email_input.clear()
-    # email_input.send_keys('cky111@qq.com')
-    # password_input=browser.find_element_by_xpath('html/body/div[11]/div[1]/div[1]/div/div[1]/div/div[2]/form/div[2]/input')
-    # password_input.clear()
-    # password_input.send_keys('Nikecky111')
-    # xing_input=browser.find_element_by_xpath('html/body/div[11]/div[1]/div[1]/div/div[1]/div/div[2]/form/div[3]/input')
-    # xing_input.clear()
-    # xing_input.send_keys('yang')
-    # ming_input=browser.find_element_by_xpath('html/body/div[11]/div[1]/div[1]/div/div[1]/div/div[2]/form/div[4]/input')
-    # ming_input.clear()
-    # ming_input.send_keys('sheng')
-    # year_btn=browser.find_element_by_xpath('html/body/div[11]/div[1]/div[1]/div/div[1]/div/div[2]/form/div[5]/div[3]/div[1]/select')
-    # year_btn.click()
+  
+
+    1498717964896
+    1498717966103
+
+    1498721735011
+    1498721736617
+
+    1498723379052
+    1498723380734
+
+    1498727847783
+    1498727849932
+  

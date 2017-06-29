@@ -35,13 +35,22 @@ sys.setdefaultencoding('utf8')
 #登陆
 loginUrl="https://www.nike.com/profile/login"
 head= {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36','Referer': 'http://store.nike.com/cn/zh_cn/'}
-data={"login":"1774507011@qq.com","password":"112358yS","rememberMe":"true"}
+data={"login":"cky111@qq.com","password":"Nikecky111","rememberMe":"true"}
 loginHtml = requests.post(loginUrl,data= data,headers = head)
 # print loginhtml.text
 # print "登陆状态:"
 # print loginhtml.status_code
 loginCookie=loginHtml.cookies
 print loginCookie
+# payurl='https://secure-store.nike.com/cn/checkout/html/confirm.jsp?_requestid=509053'
+# payhead= {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36',
+# 			'Referer': 'http://store.nike.com/cn/zh_cn/',
+# 			'cookie':str(loginCookie)
+# 			}
+
+# html=requests.get(payurl,headers=payhead).text
+# print html
+
 
 #添加购物车
 # comUrl='https://nod.nikecloud.com/nod/rest/intake'

@@ -1,14 +1,37 @@
 # -*- coding: utf-8 -*-
-import requests
-from bs4 import BeautifulSoup
-import json
-import pytesseract
-import StringIO
-from PIL import Image
+# 程序基本框架
+import requests 
+# ...
 
-# # 登陆
-cartUrl='http://www.adidas.com.cn/checkout/cart/'
-head={'User-Agent':'Mozilla/5.0 (X11; Ubuntu; Linux i686; rv:54.0) Gecko/20100101 Firefox/54.0',
-	  'Referer':'https://www.adidas.com.cn'}
-cartHtml=requests.get(cartUrl,headers=head).text
-print cartHtml
+def nike(spurl,registerinfo,userinfo):
+    pass
+    return payurl 
+    
+def adidas(spurl,registerinfo,userinfo):
+    pass
+    return payurl
+
+def apple(spurl,registerinfo,userinfo):
+    pass
+    return payurl
+
+
+nikeUrl='https://store.nike.com/cn/zh_cn'
+adidasUrl='http://www.adidas.com.cn/'
+appleUrl='https://www.apple.com/cn/'
+
+weburl=''
+splurl=""
+userinfo={}
+registerinfo={}
+
+
+
+if registerUrl==nikeUrl:
+    payurl=nike(spurl,registerinfo,userinfo)
+    
+if registerUrl==adidasUrl:
+    payurl=adidas(spurl,registerinfo,userinfo)
+    
+if registerUrl==appleUrl:
+    payurl=apple(spurl,registerinfo,userinfo)

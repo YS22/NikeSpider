@@ -1,0 +1,84 @@
+# -*- coding: utf-8 -*-
+# 程序基本框架
+import requests
+import json
+# ...
+
+def nike(spurl,registerinfo,userinfo):
+	# 注册
+	# regUrl="https://unite.nike.com/join"
+	# regHead= {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36',
+	#           'Referer':'http://store.nike.com/cn/zh_cn/'}
+	# regData={
+	# "account":{"email": registerinfo['email'], "passwordSettings": {"password": "112358yS", "passwordConfirm": "112358yS"}},
+	# "country": "CN",
+	# "dateOfBirth": "1994-01-25",
+	# "firstName": "sheng",
+	# "gender": "male",
+	# "lastName": "yang",
+	# "locale": "zh_CN",
+	# "mobileNumber": registerinfo['mobile'],
+	# "receiveEmail": "true",
+	# "registrationSiteId": "nikedotcom",
+	# "username": registerinfo['email'],
+	# "welcomeEmailTemplate": "TSD_PROF_COMM_WELCOME_V1.0"
+	# }
+	# requests.post(regUrl,data=json.dumps(regData),headers =regHead)
+	# 登陆
+	loginUrl="https://www.nike.com/profile/login?Content-Locale=zh_CN"
+	head= {'User-Agent':'Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:53.0) Gecko/20100101 Firefox/53.0','Referer': 'http://store.nike.com/cn/zh_cn/'}
+	data={"login":registerinfo['email'],"password":"112358yS","rememberMe":"true"}
+	loginhtml = requests.post(loginUrl,data= data,headers = head)
+	# print loginhtml.text
+	c= loginhtml.cookies
+	loginCookie=dict(AnalysisUserId= c["AnalysisUserId"],
+          ak_bmsc= c["ak_bmsc"],
+          llCheck= c["llCheck"],
+          slCheck= c["slCheck"],
+          sls= c["sls"],
+          NIKE_COMMERCE_COUNTRY='CN')
+	print loginCookie
+	# 商品页面
+	#sphtml = requests.get(spurl,headers = head,cookies=loginCookie)
+	#print sphtml.text
+	# 添加购物车
+	addUrl='https://nod.nikecloud.com/nod/rest/intake'
+	paydata={"t":1498726926137,"upm":"16138156515","analysisUserId":"WUDmUwoMQ10AACGkllAAAARv","guidU":"9e35ac0b-c90c-4724-e2f0-1bc70651ff05","cookies":{"CONSUMERCHOICE":"cn/zh_cn","neo.experiments":"{\"main\":{},\"snkrs\":{},\"ocp\":{},\"thirdparty\":{}}","neo.swimlane":"24"},"deviceAtlas":"sdevicePixelRatio:1|sdeviceAspectRatio:16/9|bcookieSupport:1","platform":{"id":"nike.com","v":"main"},"source":{"id":"dreamcatcher","v":"3.29.2"},"events":[{"pid":"11819614","qty":"1","skuAndSize":"19844165:40","name":"addToCartEvent","t":1498726926134,"url":"https://store.nike.com/cn/zh_cn/pd/zoom-kd10-ep-男子篮球鞋/pid-11819614/pgid-11852285","swoosh":'false',"location":{"cc":"CN","rc":"HB","tp":"vhigh","tz":"GMT+8","la":"30.58","lo":"114.27","bw":"5000"},"guidS":"8b35890e-c179-4483-fc8f-c6e33962e927"}]}
+	addcart=requests.post(addUrl,headers=head,data=paydata,cookies=loginCookie)
+	print addcart.status_code
+	addUrl2='https://nod.nikecloud.com/nod/rest/intake'
+	paydata2={"t":1498726927281,"upm":"16138156515","analysisUserId":"WUDmUwoMQ10AACGkllAAAARv","guidU":"9e35ac0b-c90c-4724-e2f0-1bc70651ff05","cookies":{"CONSUMERCHOICE":"cn/zh_cn","neo.experiments":"{\"main\":{},\"snkrs\":{},\"ocp\":{},\"thirdparty\":{}}","neo.swimlane":"24"},"deviceAtlas":"sdevicePixelRatio:1|sdeviceAspectRatio:16/9|bcookieSupport:1","platform":{"id":"nike.com","v":"main"},"source":{"id":"dreamcatcher","v":"3.29.2"},"events":[{"name":"addToCartSuccessEvent","t":1498726927278,"url":"https://store.nike.com/cn/zh_cn/pd/zoom-kd10-ep-男子篮球鞋/pid-11819614/pgid-11852285","swoosh":'false',"location":{"cc":"CN","rc":"HB","tp":"vhigh","tz":"GMT+8","la":"30.58","lo":"114.27","bw":"5000"},"guidS":"8b35890e-c179-4483-fc8f-c6e33962e927"}]}
+	addcart2=requests.post(addUrl2,headers=head,data=paydata2,cookies=loginCookie)
+	print addcart2.status_code
+	#return payurl 
+	
+def adidas(spurl,registerinfo,userinfo):
+	pass
+	return payurl
+
+def apple(spurl,registerinfo,userinfo):
+	pass
+	return payurl
+
+# 平台标识
+nikeUrl='https://store.nike.com/cn/zh_cn'
+adidasUrl='http://www.adidas.com.cn/'
+appleUrl='https://www.apple.com/cn/'
+
+# 动态数据
+weburl='https://store.nike.com/cn/zh_cn'
+spurl='http://store.nike.com/cn/zh_cn/pd/zoom-kd10-ep-%E7%94%B7%E5%AD%90%E7%AF%AE%E7%90%83%E9%9E%8B/pid-11819614/pgid-11852285'
+userinfo={}
+registerinfo={'email':'ysnike123@qq.com','mobile':'17786495693'}
+
+
+# 平台选择
+if weburl==nikeUrl:
+	nike(spurl,registerinfo,userinfo)
+	
+if weburl==adidasUrl:
+	payurl=adidas(spurl,registerinfo,userinfo)
+	
+if weburl==appleUrl:
+	payurl=apple(spurl,registerinfo,userinfo)
+	

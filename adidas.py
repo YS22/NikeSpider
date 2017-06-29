@@ -10,6 +10,7 @@ import sys
 reload(sys)   
 sys.setdefaultencoding('utf8')
 import time
+
 #注册
 # infoHead= {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36',
 #          'Referer':'https://www.adidas.com.cn/customer/account/create/'}
