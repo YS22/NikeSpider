@@ -2,6 +2,10 @@
 # 程序基本框架
 import requests
 import json
+from bs4 import BeautifulSoup
+import pytesseract
+import StringIO
+from PIL import Image
 # ...
 
 def nike(spurl,registerinfo,userinfo):
@@ -43,18 +47,83 @@ def nike(spurl,registerinfo,userinfo):
 	#print sphtml.text
 	# 添加购物车
 	addUrl='https://nod.nikecloud.com/nod/rest/intake'
-	paydata={"t":1498726926137,"upm":"16138156515","analysisUserId":"WUDmUwoMQ10AACGkllAAAARv","guidU":"9e35ac0b-c90c-4724-e2f0-1bc70651ff05","cookies":{"CONSUMERCHOICE":"cn/zh_cn","neo.experiments":"{\"main\":{},\"snkrs\":{},\"ocp\":{},\"thirdparty\":{}}","neo.swimlane":"24"},"deviceAtlas":"sdevicePixelRatio:1|sdeviceAspectRatio:16/9|bcookieSupport:1","platform":{"id":"nike.com","v":"main"},"source":{"id":"dreamcatcher","v":"3.29.2"},"events":[{"pid":"11819614","qty":"1","skuAndSize":"19844165:40","name":"addToCartEvent","t":1498726926134,"url":"https://store.nike.com/cn/zh_cn/pd/zoom-kd10-ep-男子篮球鞋/pid-11819614/pgid-11852285","swoosh":'false',"location":{"cc":"CN","rc":"HB","tp":"vhigh","tz":"GMT+8","la":"30.58","lo":"114.27","bw":"5000"},"guidS":"8b35890e-c179-4483-fc8f-c6e33962e927"}]}
+	paydata={"t":1498726926137,"upm":"16138156515","analysisUserId":loginCookie['AnalysisUserId'],"guidU":"9e35ac0b-c90c-4724-e2f0-1bc70651ff05","cookies":{"CONSUMERCHOICE":"cn/zh_cn","neo.experiments":"{\"main\":{},\"snkrs\":{},\"ocp\":{},\"thirdparty\":{}}","neo.swimlane":"24"},"deviceAtlas":"sdevicePixelRatio:1|sdeviceAspectRatio:16/9|bcookieSupport:1","platform":{"id":"nike.com","v":"main"},"source":{"id":"dreamcatcher","v":"3.29.2"},"events":[{"pid":"11819614","qty":"1","skuAndSize":"19844165:40","name":"addToCartEvent","t":1498726926134,"url":"https://store.nike.com/cn/zh_cn/pd/zoom-kd10-ep-男子篮球鞋/pid-11819614/pgid-11852285","swoosh":'false',"location":{"cc":"CN","rc":"HB","tp":"vhigh","tz":"GMT+8","la":"30.58","lo":"114.27","bw":"5000"},"guidS":"8b35890e-c179-4483-fc8f-c6e33962e927"}]}
 	addcart=requests.post(addUrl,headers=head,data=paydata,cookies=loginCookie)
 	print addcart.status_code
-	addUrl2='https://nod.nikecloud.com/nod/rest/intake'
-	paydata2={"t":1498726927281,"upm":"16138156515","analysisUserId":"WUDmUwoMQ10AACGkllAAAARv","guidU":"9e35ac0b-c90c-4724-e2f0-1bc70651ff05","cookies":{"CONSUMERCHOICE":"cn/zh_cn","neo.experiments":"{\"main\":{},\"snkrs\":{},\"ocp\":{},\"thirdparty\":{}}","neo.swimlane":"24"},"deviceAtlas":"sdevicePixelRatio:1|sdeviceAspectRatio:16/9|bcookieSupport:1","platform":{"id":"nike.com","v":"main"},"source":{"id":"dreamcatcher","v":"3.29.2"},"events":[{"name":"addToCartSuccessEvent","t":1498726927278,"url":"https://store.nike.com/cn/zh_cn/pd/zoom-kd10-ep-男子篮球鞋/pid-11819614/pgid-11852285","swoosh":'false',"location":{"cc":"CN","rc":"HB","tp":"vhigh","tz":"GMT+8","la":"30.58","lo":"114.27","bw":"5000"},"guidS":"8b35890e-c179-4483-fc8f-c6e33962e927"}]}
-	addcart2=requests.post(addUrl2,headers=head,data=paydata2,cookies=loginCookie)
-	print addcart2.status_code
+	# addUrl2='https://nod.nikecloud.com/nod/rest/intake'
+	# paydata2={"t":1498726927281,"upm":"16138156515","analysisUserId":"WUDmUwoMQ10AACGkllAAAARv","guidU":"9e35ac0b-c90c-4724-e2f0-1bc70651ff05","cookies":{"CONSUMERCHOICE":"cn/zh_cn","neo.experiments":"{\"main\":{},\"snkrs\":{},\"ocp\":{},\"thirdparty\":{}}","neo.swimlane":"24"},"deviceAtlas":"sdevicePixelRatio:1|sdeviceAspectRatio:16/9|bcookieSupport:1","platform":{"id":"nike.com","v":"main"},"source":{"id":"dreamcatcher","v":"3.29.2"},"events":[{"name":"addToCartSuccessEvent","t":1498726927278,"url":"https://store.nike.com/cn/zh_cn/pd/zoom-kd10-ep-男子篮球鞋/pid-11819614/pgid-11852285","swoosh":'false',"location":{"cc":"CN","rc":"HB","tp":"vhigh","tz":"GMT+8","la":"30.58","lo":"114.27","bw":"5000"},"guidS":"8b35890e-c179-4483-fc8f-c6e33962e927"}]}
+	# addcart2=requests.post(addUrl2,headers=head,data=paydata2,cookies=loginCookie)
+	# print addcart2.status_code
 	#return payurl 
 	
 def adidas(spurl,registerinfo,userinfo):
-	pass
-	return payurl
+	# 注册
+	# infoHead= {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36',
+ #          	   'Referer':'https://www.adidas.com.cn/customer/account/create/'}
+	# regUrl="https://www.adidas.com.cn/customer/account/createpost/"
+	# cookie=requests.get(regUrl,headers=infoHead).cookies
+
+	# regHead= {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36',
+	#           'Referer':'https://www.adidas.com.cn/customer/account/create/',
+	#           'cookie':str(cookie)
+	#           }
+
+	# infoUrl='https://www.adidas.com.cn/customer/account/create/'
+	# html=requests.get(infoUrl,headers=infoHead).text
+	# #获得token
+	# soup=BeautifulSoup(html,'html.parser')
+	# token=soup.select('input')[1]['value']
+	# #print token
+	# #获得验证码
+	# imageUrl=soup.select('#captchaCode1')[0]['src']
+	# imageHtml=requests.get(imageUrl,headers=infoHead).content
+	# imgFile=StringIO.StringIO(imageHtml) #缓存图片
+	# img=Image.open(imgFile)
+	# #print img
+	# vcode = pytesseract.image_to_string(img)
+	# #print (vcode)
+	# regData={
+	#  		 'token':token,
+	#          'firstname':'杨胜',
+	#          'mobile':registerinfo['mobile'],
+	#          'gender':'1',
+	#          'day':'2',
+	#          'year':'1994',
+	#          'dob':'1994-3-2',
+	#          'osolCatchaTxt':vcode,
+	#          'osolCatchaTxtInst':1,
+	#          'email':registerinfo['email'],
+	#          'username':registerinfo['username'],
+	#          'password':'112358yS',
+	#          'confirmation':'112358yS',
+	#          'agree_terms':1
+	# }
+	# reghtml=requests.post(regUrl,data=regData,headers =regHead)
+	# print reghtml.text
+	# loginCookie=reghtml.cookies
+	# 登陆
+	loginUrl="https://www.adidas.com.cn/customer/account/loginPost/"
+	loginHead={'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36','Referer': 'https://www.adidas.com.cn/customer/account/login/'}
+	loginCookie=requests.get(loginUrl,headers=loginHead).cookies
+	#print loginCookie
+	head= {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36',
+	       'Referer': 'https://www.adidas.com.cn/customer/account/login/',
+	       'cookie':str(loginCookie)
+	       }
+	data={"login[username]":registerinfo['username'],"login[password]":"112358yS",'send':''}
+	loginHtml = requests.post(loginUrl,data=data,headers = head)
+	#print loginHtml.text
+	loginCookie=loginHtml.cookies
+	#print loginCookie
+	#print loginCookie
+	# 查看购物车
+	# cartUrl='http://www.adidas.com.cn/checkout/cart/'
+	# cartHtm=requests.get(cartUrl,headers=loginHead,cookies=loginCookie)
+	# print cartHtm.text
+	#print loginCookie
+
+
+	#return payurl
 
 def apple(spurl,registerinfo,userinfo):
 	pass
@@ -66,10 +135,10 @@ adidasUrl='http://www.adidas.com.cn/'
 appleUrl='https://www.apple.com/cn/'
 
 # 动态数据
-weburl='https://store.nike.com/cn/zh_cn'
-spurl='http://store.nike.com/cn/zh_cn/pd/zoom-kd10-ep-%E7%94%B7%E5%AD%90%E7%AF%AE%E7%90%83%E9%9E%8B/pid-11819614/pgid-11852285'
+weburl='http://www.adidas.com.cn/'
+spurl=''
 userinfo={}
-registerinfo={'email':'ysnike123@qq.com','mobile':'17786495693'}
+registerinfo={'email':'ysnike123456@qq.com','mobile':'17786495627','username':'ysadidas1998'}
 
 
 # 平台选择
@@ -77,7 +146,7 @@ if weburl==nikeUrl:
 	nike(spurl,registerinfo,userinfo)
 	
 if weburl==adidasUrl:
-	payurl=adidas(spurl,registerinfo,userinfo)
+	adidas(spurl,registerinfo,userinfo)
 	
 if weburl==appleUrl:
 	payurl=apple(spurl,registerinfo,userinfo)
