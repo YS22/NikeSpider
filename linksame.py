@@ -99,47 +99,51 @@ def nike(spurl,registerinfo,userinfo):
 	# return payurl
 	
 def adidas(spurl,registerinfo,userinfo):
-	# 注册
-	# infoHead= {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36',
- #          	   'Referer':'https://www.adidas.com.cn/customer/account/create/'}
-	# regUrl="https://www.adidas.com.cn/customer/account/createpost/"
-	# cookie=requests.get(regUrl,headers=infoHead).cookies
+	#注册
+	infoHead= {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36',
+           	   'Referer':'https://www.adidas.com.cn/customer/account/create/'}
+	regUrl="https://www.adidas.com.cn/customer/account/createpost/"
+	cookie=requests.get(regUrl,headers=infoHead).cookies
 
-	# regHead= {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36',
-	#           'Referer':'https://www.adidas.com.cn/customer/account/create/',
-	#           'cookie':str(cookie)
-	#           }
+	regHead= {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36',
+	           'Referer':'https://www.adidas.com.cn/customer/account/create/',
+	           'cookie':str(cookie)
+	           }
 
-	# infoUrl='https://www.adidas.com.cn/customer/account/create/'
-	# html=requests.get(infoUrl,headers=infoHead).text
-	# #获得token
-	# soup=BeautifulSoup(html,'html.parser')
-	# token=soup.select('input')[1]['value']
-	# #print token
-	# #获得验证码
-	# imageUrl=soup.select('#captchaCode1')[0]['src']
-	# imageHtml=requests.get(imageUrl,headers=infoHead).content
-	# imgFile=StringIO.StringIO(imageHtml) #缓存图片
-	# img=Image.open(imgFile)
-	# #print img
-	# vcode = pytesseract.image_to_string(img)
-	# #print (vcode)
-	# regData={
-	#  		 'token':token,
-	#          'firstname':'杨胜',
-	#          'mobile':registerinfo['mobile'],
-	#          'gender':'1',
-	#          'day':'2',
-	#          'year':'1994',
-	#          'dob':'1994-3-2',
-	#          'osolCatchaTxt':vcode,
-	#          'osolCatchaTxtInst':1,
-	#          'email':registerinfo['email'],
-	#          'username':registerinfo['username'],
-	#          'password':'112358yS',
-	#          'confirmation':'112358yS',
-	#          'agree_terms':1}
-	# reghtml=requests.post(regUrl,data=regData,headers =regHead)
+	infoUrl='https://www.adidas.com.cn/customer/account/create/'
+	html=requests.get(infoUrl,headers=infoHead).text
+	#获得token
+	soup=BeautifulSoup(html,'html.parser')
+	token=soup.select('input')[1]['value']
+	#print token
+	#获得验证码
+	imageUrl=soup.select('#captchaCode1')[0]['src']
+	imageHtml=requests.get(imageUrl,headers=infoHead).content
+	imgFile=StringIO.StringIO(imageHtml) #缓存图片
+	img=Image.open(imgFile)
+	#print img
+	vcode = pytesseract.image_to_string(img)
+	#print (vcode)
+	regData={
+	 		 'token':token,
+	         'firstname':'杨胜',
+	         'mobile':registerinfo['mobile'],
+	         'gender':'1',
+	         'day':'2',
+	         'year':'1994',
+	         'dob':'1994-3-2',
+	         'osolCatchaTxt':vcode,
+	         'osolCatchaTxtInst':1,
+	         'email':registerinfo['email'],
+	         'username':registerinfo['username'],
+	         'password':'112358yS',
+	         'confirmation':'112358yS',
+	         'agree_terms':1}
+	reghtml=requests.post(regUrl,data=regData,headers =regHead)
+	loginCookie=reghtml.cookies
+
+	loginHead={'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36','Referer': 'https://www.adidas.com.cn/customer/account/login/'}
+
 	# #titlesoup=BeautifulSoup(reghtml.text,'html.parser')
 	# # print title
 	# # print reghtml.status_code
@@ -147,23 +151,23 @@ def adidas(spurl,registerinfo,userinfo):
 	# loginCookie=reghtml.cookies
 	# print loginCookie
 	# 登陆
-	loginUrl="https://www.adidas.com.cn/customer/account/loginPost/"
-	loginHead={'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36','Referer': 'https://www.adidas.com.cn/customer/account/login/'}
-	loginCookie=requests.get(loginUrl,headers=loginHead).cookies
+	# loginUrl="https://www.adidas.com.cn/customer/account/loginPost/"
+	#loginHead={'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36','Referer': 'https://www.adidas.com.cn/customer/account/login/'}
+	# loginCookie=requests.get(loginUrl,headers=loginHead).cookies
 
-	head= {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36',
-	       'Referer': 'https://www.adidas.com.cn/customer/account/login/',
-	       'cookie':str(loginCookie)
-	       }
-	data={"login[username]":registerinfo['username'],"login[password]":"112358yS",'send':''}
-	loginHtml = requests.post(loginUrl,data=data,headers = head)
-
-	loginCookie=loginHtml.cookies
+	# head= {'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36',
+	#        'Referer': 'https://www.adidas.com.cn/customer/account/login/',
+	#        'cookie':str(loginCookie)
+	#        }
+	# data={"login[username]":registerinfo['username'],"login[password]":"112358yS",'send':''}
+	# loginHtml = requests.post(loginUrl,data=data,headers = head)
+	# print "登陆成功"
+	# loginCookie=loginHtml.cookies
 	
 	# 查看购物车
-	cartUrl='http://www.adidas.com.cn/checkout/cart/'
-	cartHtm=requests.get(cartUrl,headers=loginHead,cookies=loginCookie)
-	print cartHtm.text
+	# cartUrl='http://www.adidas.com.cn/checkout/cart/'
+	# cartHtm=requests.get(cartUrl,headers=loginHead,cookies=loginCookie)
+	# print cartHtm.text
 	#添加购物车
 	#1 获取验证信息
 	spHtml=requests.get(spurl,headers=loginHead,cookies=loginCookie)
@@ -181,66 +185,76 @@ def adidas(spurl,registerinfo,userinfo):
 	product=infosoup.select('input')[3]['value']
 
 	## 2 添加
+	print "开始抢购"
 	addurl='http://www.adidas.com.cn/checkout/cart/add/'
 	addHead={'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36',
-			 'Referer': 'https://www.adidas.com.cn/customer/account/login/',
+			 'Referer': spurl,
 			 'Content-Type':'application/x-www-form-urlencoded; charset=UTF-8'}
 	#params = {'token':token,'isajax':isajax,'release2':release2,'product':product,'super_attribute[185]':'811','qty':'1'}        
-	# data = urllib.urlencode(params) 
+	# data = urllib.urlencode(params)
 	#print data
 	payload = "token="+token+"&isajax="+isajax+"&release2="+release2+"&product="+product+"&super_attribute%5B185%5D="+"69"+"&qty="+"1"
 	print payload
 	add=requests.post(addurl,data=payload,headers=addHead,cookies=loginCookie)
 	print add.status_code
 	
+	# reghtml=requests.get(regUrl,headers =loginHead,cookies=loginCookie)
+	# print reghtml.text
 	
-	# add addres
-	# infoUrl='https://www.adidas.com.cn/yancheckout/process/'
-	# head={'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36',
-	# 		 'Referer': 'https://www.adidas.com.cn/customer/account/login/'}
+	# 添加收货信息
+	print "添加收货信息"
+	infoUrl='https://www.adidas.com.cn/yancheckout/process/'
+	head={'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36',
+		  'Referer': 'https://www.adidas.com.cn/customer/account/login/'}
 
-	# infohtml=requests.get(infoUrl,headers=head,cookies=loginCookie)
-	# soup=BeautifulSoup(infohtml.text,"html.parser")
-	# token=soup.select('input')[20]['value']
-	# loginCookie=infohtml.cookies
-	# print token
-	# addresUrl='https://www.adidas.com.cn/yancheckout/process/saveShippingAndPayment/'
-	# userinfo={"shipping[firstname]":"yangsheng",
-	# 		  "shipping[country_id]":"CN",
-	# 		  "shipping[region_id]":"515",
-	# 		  "shipping[region]":"天津",
-	# 		  "shipping[city_id]":"342",
-	# 		  "shipping[district_id]":"3127",
-	# 		  "shipping[city]":"天津市",
-	# 		  "shipping[district]":"河东区",
-	# 		  "shipping[street][]":"苏家爱华yangsheng21",
-	# 		  "shipping[postcode]":"432000",
-	# 		  "shipping[mobile]":"17786493931",
-	# 		  "shipping[tel_areacode]":"",
-	# 		  "shipping[telephone]":"",
-	# 		  "shipping[save_in_address_book]":"1",
-	# 		  "shipping[use_for_shipping]":"1",
-	# 		  "shipping[update_region]":"0",
-	# 		  "shipping[primary_shipping]":"1",
-	# 		  "shipping[primary_billing]":"1",
-	# 		  "shipping[delivery_memo]":"湖区yangsheng2",
-	# 		  "shipping[id]":"",
-	# 		  "shipping[yancheckout_page]":"1",
-	# 		  "delivery_type":"Normal",
-	# 		  "token":token,
-	# 		  "payment[alipay_pay_bank]":"ALIPAY",
-	# 		  "payment[alipay_pay_method]":"bankPay",
-	# 		  "shipping_method":"carrier_bestway",
-	# 		  "fapiao[fapiao_type]":"personal",
-	# 		  "fapiao[fapiao_title]":"",
-	# 		  "fapiao[fapiao_memo]":""}
-	# data = urllib.urlencode(userinfo)
-	# print data
-	# add_head={'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36',
-	# 		 'Referer': 'https://www.adidas.com.cn/yancheckout/process/',
-	# 		 'Content-Type':'application/x-www-form-urlencoded'}
-	# add_addres=requests.post(addresUrl,headers=add_head,data=data,cookies=loginCookie)
-	# print add_addres.status_code
+	infohtml=requests.get(infoUrl,headers=head,cookies=loginCookie)
+	soup=BeautifulSoup(infohtml.text,"html.parser")
+	token=soup.select('input')[20]['value']
+	#loginCookie=infohtml.cookies
+	#print token
+	addresUrl='https://www.adidas.com.cn/yancheckout/process/saveShippingAndPayment/'
+	userinfo={"shipping[firstname]":"yangsheng",
+			  "shipping[country_id]":"CN",
+			  "shipping[region_id]":"515",
+			  "shipping[region]":"天津",
+			  "shipping[city_id]":"342",
+			  "shipping[district_id]":"3127",
+			  "shipping[city]":"天津市",
+			  "shipping[district]":"河东区",
+			  "shipping[street][]":"苏家爱华yangsheng21",
+			  "shipping[postcode]":"432000",
+			  "shipping[mobile]":"17786493931",
+			  "shipping[tel_areacode]":"",
+			  "shipping[telephone]":"",
+			  "shipping[save_in_address_book]":"1",
+			  "shipping[use_for_shipping]":"1",
+			  "shipping[update_region]":"0",
+			  "shipping[primary_shipping]":"1",
+			  "shipping[primary_billing]":"1",
+			  "shipping[delivery_memo]":"湖区yangsheng2",
+			  "shipping[id]":"",
+			  "shipping[yancheckout_page]":"1",
+			  "delivery_type":"Normal",
+			  "token":token,
+			  "payment[alipay_pay_bank]":"ALIPAY",
+			  "payment[alipay_pay_method]":"bankPay",
+			  "shipping_method":"carrier_bestway",
+			  "fapiao[fapiao_type]":"personal",
+			  "fapiao[fapiao_title]":"",
+			  "fapiao[fapiao_memo]":""}
+	data = urllib.urlencode(userinfo)
+	print data
+	add_head={'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36',
+			 'Referer': 'https://www.adidas.com.cn/yancheckout/process/',
+			 'Content-Type':'application/x-www-form-urlencoded'}
+	add_addres=requests.post(addresUrl,headers=add_head,data=data,cookies=loginCookie)
+	print add_addres.status_code
+	print add_addres.text
+	reghtml=requests.get(regUrl,headers =loginHead,cookies=loginCookie)
+	print reghtml.text
+    # 获得付款链接
+
+    ## 提交订单
 	#return payurl
 
 def apple(spurl,registerinfo,userinfo):
@@ -257,7 +271,7 @@ appleUrl='https://www.apple.com/cn/'
 weburl='http://www.adidas.com.cn/'
 spurl='http://www.adidas.com.cn/by4472'
 userinfo={}
-registerinfo={'email':'yangsheng1994@qq.com','mobile':'17786493837','username':'adidasys1994'}
+registerinfo={'email':'linksamewuhan13@qq.com','mobile':'17786593939','username':'wuhanyangshnegys8811s'}
 
 
 # 平台选择

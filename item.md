@@ -275,23 +275,85 @@ loginUrl="https://www.adidas.com.cn/customer/account/loginPost/"
     add=requests.post(addurl,data=data,headers=addHead,cookies=loginCookie)
     print add.status_code
 
+form_key:I03R1wx2VC6asmHw
+success_url:
+error_url:
+token:d7781617924bea89949a082594c0d00b
+country_id:CN
+firstname:杨胜
+region_id:515
+region:天津
+city_id:342
+district_id:3127
+city:天津市
+district:河东区
+street[]:家居巴拉克的
+postcode:432000
+tel_areacode:
+telephone:
+mobile:17786493932
+default_billing:1
+default_shipping:1
+
+
+
+
+# 取得付款链接（qrImgUrl）
+1.
+https://tfsimg.alipay.com/images/mobilecodec/T1ZmtEXcpbXXXXXXXX(二维码)
+|
+https://excashier.alipay.com/standard/auth.htm?payOrderId=b1eb3c3324e34467ae7ad1d197b2fffd.80
+|
+payOrderId=b1eb3c3324e34467ae7ad1d197b2fffd.80
+
+
+2.
+填写订单->确认订单（取得该页面立即支付绑定的链接）->到达付款页面->取得二维码付款链接
 
 
 
 
 
 
+添加地址
+# addresUrl='https://www.adidas.com.cn/customer/address/new/'
+  # newaddreshtml=requests.get(addresUrl,headers=loginHead,cookies=loginCookie)
+  # print newaddreshtml.text
+  # #print newaddreshtml.text
+  # soup=BeautifulSoup(newaddreshtml.text,'html.parser')
+  # token=soup.select('input')[4]['value']
+  # #print token
+  # form_key=soup.select('input')[1]['value']
+  # #print form_key
+  # posturl='https://www.adidas.com.cn/customer/address/formPost/'
+  # userinfo={'form_key':form_key,
+  #       'success_url':'',
+  #       'error_url':'',
+  #       'token':token,
+  #       'country_id':'CN',
+  #       'firstname':'杨胜',
+  #       'region_id':'515',
+  #       'region':'天津',
+  #       'city_id':'342',
+  #       'district_id':'3127',
+  #       'city':'天津市',
+  #       'district':'河东区',
+  #       'street[]':'家居巴拉克的',
+  #       'postcode':'432000',
+  #       'tel_areacode':'',
+  #       'telephone':'',
+  #       'mobile':'17786493932',
+  #       'default_billing':'1',
+  #       'default_shipping':'1'}
+  # data=urllib.urlencode(userinfo)
+  # #print data
+  # addres=requests.post(posturl,headers=addHead,data=data,cookies=loginCookie)
+  # print addres.status_code
 
 
-
-
-
-
-
-
-
-
-
-
+1.提交结算的所有信息
+2.解决location
+3.根据location的url找到付款页面
+4.到达付款页面提二维码url
 
 
