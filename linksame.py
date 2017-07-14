@@ -162,7 +162,7 @@ def adidas(spurl,registerinfo,userinfo):
 	# cartHtm=requests.get(cartUrl,headers=loginHead,cookies=loginCookie)
 	# print cartHtm.text
 	#添加购物车
-	#1 获取验证信息
+	## 1 获取验证信息
 	spHtml=requests.get(spurl,headers=infoHead,cookies=loginCookie)
 	
 	soup=BeautifulSoup(spHtml.text,'html.parser')
@@ -281,16 +281,6 @@ def adidas(spurl,registerinfo,userinfo):
 	payurl=zhifusoup.select('input')[8]['value']
 	print payurl
 
-
-
-	# print add_addres.headers['Location']
-	
-	# reghtml=requests.get(regUrl,headers =infoHead,cookies=loginCookie)
-	# print reghtml.text
-    # 获得付款链接
-
-    ## 提交订单
-	#return payurl
 
 def apple(spurl,registerinfo,userinfo):
 	pass

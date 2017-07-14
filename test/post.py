@@ -12,14 +12,14 @@ html=requests.get(appleUrl,headers=appleHead)
 cookie=html.cookies
 
 
-captchaUrl='https://appleid.apple.com/captcha'
-captchaHead={'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36',
-	  'Referer':'https://appleid.apple.com/account?&localang=CN-ZH&app_id=2083&returnURL=https%3A%2F%2Fsecure1.store.apple.com%2Fcn%2Fshop%2Fsign_in%3Fc%3DaHR0cHM6Ly93d3cuYXBwbGUuY29tL2NuLy8_YWZpZD1wMjM4JTdDMVo2eXQ0aUJ2LWRjX210aWRfMTg3MDd2eHUzODQ4NF9wY3JpZF8xNDk3MjQ0MDkyOV8mY2lkPWFvcy1jbi1rd2JhLWJyYW5kfDFhb3M3YTc4YmJlZTZhMDhlODBiYTAyMjU3MmQzZDM3NmIyMTIyYTU3ZjM4%26r%3DSCDHYHP7CY4H9XK2H%26s%3DaHR0cHM6Ly93d3cuYXBwbGUuY29tL2NuLy8_YWZpZD1wMjM4JTdDMVo2eXQ0aUJ2LWRjX210aWRfMTg3MDd2eHUzODQ4NF9wY3JpZF8xNDk3MjQ0MDkyOV8mY2lkPWFvcy1jbi1rd2JhLWJyYW5kfDFhb3M3YTc4YmJlZTZhMDhlODBiYTAyMjU3MmQzZDM3NmIyMTIyYTU3ZjM4',
-	  'cookie':str(cookie)
-	  }
-payload={'type': "IMAGE"}
-info=requests.post(captchaUrl,headers=captchaHead,data=payload)
-print info.text
+# captchaUrl='https://appleid.apple.com/captcha'
+# captchaHead={'User-Agent':'Mozilla/5.0 (Windows NT 6.1; WOW64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/44.0.2403.125 Safari/537.36',
+# 	  'Referer':'https://appleid.apple.com/account?&localang=CN-ZH&app_id=2083&returnURL=https%3A%2F%2Fsecure1.store.apple.com%2Fcn%2Fshop%2Fsign_in%3Fc%3DaHR0cHM6Ly93d3cuYXBwbGUuY29tL2NuLy8_YWZpZD1wMjM4JTdDMVo2eXQ0aUJ2LWRjX210aWRfMTg3MDd2eHUzODQ4NF9wY3JpZF8xNDk3MjQ0MDkyOV8mY2lkPWFvcy1jbi1rd2JhLWJyYW5kfDFhb3M3YTc4YmJlZTZhMDhlODBiYTAyMjU3MmQzZDM3NmIyMTIyYTU3ZjM4%26r%3DSCDHYHP7CY4H9XK2H%26s%3DaHR0cHM6Ly93d3cuYXBwbGUuY29tL2NuLy8_YWZpZD1wMjM4JTdDMVo2eXQ0aUJ2LWRjX210aWRfMTg3MDd2eHUzODQ4NF9wY3JpZF8xNDk3MjQ0MDkyOV8mY2lkPWFvcy1jbi1rd2JhLWJyYW5kfDFhb3M3YTc4YmJlZTZhMDhlODBiYTAyMjU3MmQzZDM3NmIyMTIyYTU3ZjM4',
+# 	  'cookie':str(cookie)
+# 	  }
+# payload={'type': "IMAGE"}
+# info=requests.post(captchaUrl,headers=captchaHead,data=payload)
+# print info.text
 
 ## xpath抓取
 # selector=etree.HTML(html)
