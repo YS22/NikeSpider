@@ -729,3 +729,123 @@ soup.select('#cartForm input')[15]['name']:'1',
 '_D:/atg/commerce/order/purchase/CartModifierFormHandler.moveToCheckout':'' ,
 '_DARGS':'/ap/checkout/common/includes/beginCheckout.jsp.cartForm'
 } 
+
+
+
+
+_dyncharset:UTF-8
+_dynSessConf:5438152430288296311
+/atg/userprofiling/Profile.email:linksame_47@qq.com
+_D:/atg/userprofiling/Profile.email: 
+secureProxyKey:AP166415105
+runPaymentValidation:false
+route:html
+/atg/commerce/order/purchase/CommitOrderFormHandler.applyPaymentInfoSuccessURL:https://secure-store.nike.com/cn/checkout/html/confirm.jsp
+_D:/atg/commerce/order/purchase/CommitOrderFormHandler.applyPaymentInfoSuccessURL: 
+/atg/commerce/order/purchase/CommitOrderFormHandler.applyPaymentInfoErrorURL:https://secure-store.nike.com/cn/checkout/html/payment.jsp
+_D:/atg/commerce/order/purchase/CommitOrderFormHandler.applyPaymentInfoErrorURL: 
+/atg/commerce/order/purchase/CommitOrderFormHandler.paymentType:alipay
+_D:/atg/commerce/order/purchase/CommitOrderFormHandler.paymentType: 
+/atg/commerce/order/purchase/PaymentGroupFormHandler.captureFapiao:true
+_D:/atg/commerce/order/purchase/PaymentGroupFormHandler.captureFapiao: 
+/atg/commerce/order/purchase/CommitOrderFormHandler.captureFapiao:true
+_D:/atg/commerce/order/purchase/CommitOrderFormHandler.captureFapiao: 
+/atg/commerce/order/purchase/CommitOrderFormHandler.values.bankName:
+_D:/atg/commerce/order/purchase/CommitOrderFormHandler.values.bankName: 
+/atg/commerce/order/purchase/CommitOrderFormHandler.submitMode:billingReviewSubmit
+_D:/atg/commerce/order/purchase/CommitOrderFormHandler.submitMode: 
+/atg/commerce/order/purchase/PaymentGroupFormHandler.useProfileEmailAddress:false
+_D:/atg/commerce/order/purchase/PaymentGroupFormHandler.useProfileEmailAddress: 
+deviceId:
+_D:deviceId: 
+/atg/commerce/order/purchase/CommitOrderFormHandler.executeBillingReview:true
+_D:/atg/commerce/order/purchase/CommitOrderFormHandler.executeBillingReview: 
+/atg/commerce/order/purchase/CommitOrderFormHandler.paymentType:
+_D:/atg/commerce/order/purchase/CommitOrderFormHandler.paymentType: 
+paymentMethod:alipay
+fapiaoFlag:on
+fapiaoTitle:个人
+_DARGS:/ap/checkout/html/payment.jsp.billingForm
+
+
+
+_dyncharset=UTF-8&_dynSessConf=5438152430288296311&%2Fatg%2Fuserprofiling%2FProfile.email=linksame_47%40qq.com&_D%3A%2Fatg%2Fuserprofiling%2FProfile.email=+&secureProxyKey=AP166415105&runPaymentValidation=false&route=html&%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.applyPaymentInfoSuccessURL=https%3A%2F%2Fsecure-store.nike.com%2Fcn%2Fcheckout%2Fhtml%2Fconfirm.jsp&_D%3A%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.applyPaymentInfoSuccessURL=+&%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.applyPaymentInfoErrorURL=https%3A%2F%2Fsecure-store.nike.com%2Fcn%2Fcheckout%2Fhtml%2Fpayment.jsp&_D%3A%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.applyPaymentInfoErrorURL=+&%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.paymentType=alipay&_D%3A%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.paymentType=+&%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FPaymentGroupFormHandler.captureFapiao=true&_D%3A%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FPaymentGroupFormHandler.captureFapiao=+&%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.captureFapiao=true&_D%3A%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.captureFapiao=+&%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.values.bankName=&_D%3A%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.values.bankName=+&%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.submitMode=billingReviewSubmit&_D%3A%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.submitMode=+&%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FPaymentGroupFormHandler.useProfileEmailAddress=false&_D%3A%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FPaymentGroupFormHandler.useProfileEmailAddress=+&deviceId=&_D%3AdeviceId=+&%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.executeBillingReview=true&_D%3A%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.executeBillingReview=+&%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.paymentType=&_D%3A%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.paymentType=+&paymentMethod=alipay&fapiaoFlag=on&fapiaoTitle=%E4%B8%AA%E4%BA%BA&_DARGS=%2Fap%2Fcheckout%2Fhtml%2Fpayment.jsp.billingForm
+
+%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.values.bankName=&_D%3A%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.executeBillingReview=&%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.executeBillingReview=true&_DARGS=%2Fap%2Fcheckout%2Fhtml%2Fpayment.jsp.billingForm&_D%3A%2Fatg%2Fuserprofiling%2FProfile.email=&fapiaoFlag=on&_dynSessConf=-517230185661126095&_D%3AdeviceId=&%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.paymentType=&%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.submitMode=billingReviewSubmit&deviceId=&_D%3A%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.submitMode=&%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FPaymentGroupFormHandler.captureFapiao=true&_D%3A%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.paymentType=&_D%3A%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FPaymentGroupFormHandler.captureFapiao=&%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FPaymentGroupFormHandler.useProfileEmailAddress=false&_D%3A%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.captureFapiao=&%2Fatg%2Fuserprofiling%2FProfile.email=linksame_47%40qq.com&%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.applyPaymentInfoSuccessURL=https%3A%2F%2Fsecure-store.nike.com%2Fcn%2Fcheckout%2Fhtml%2Fconfirm.jsp&_D%3A%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FPaymentGroupFormHandler.useProfileEmailAddress=&route=html&secureProxyKey=AP166415117&%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.captureFapiao=true&_dyncharset=UTF-8&_D%3A%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.applyPaymentInfoErrorURL=&_D%3A%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.applyPaymentInfoSuccessURL=&fapiaoTitle=%E4%B8%AA%E4%BA%BA&runPaymentValidation=false&%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.applyPaymentInfoErrorURL=https%3A%2F%2Fsecure-store.nike.com%2Fcn%2Fcheckout%2Fhtml%2Fpayment.jsp&paymentMethod=alipay&_D%3A%2Fatg%2Fcommerce%2Forder%2Fpurchase%2FCommitOrderFormHandler.values.bankName=
+
+%E4%B8%AA%E4%BA%BA
+%E4%B8%AA%E4%BA%BA
+
+
+{"code":1,"msg":"\u6210\u529f","data":[{"task_relid":"2","task_id":"11","t_id":"1","status":"1","task_type":"2","site_id":"1","createtime":"2017-07-10 16:59:18","rules":"{\"allSize\":[[\"37\",\"38\",\"39\",\"37.5\"],[\"49\",\"50\",\"51\",\"72\"]]}","task_url":"http:\/\/www.adidas.com.cn\/bz0402","site_name":"\u963f\u8fea\u8fbe\u65af","t_name":"1185827680@qq.com"}]}
+
+
+
+{"code":1,"msg":"\u6210\u529f","data":[{"task_relid":"2","task_id":"11","t_id":"1","status":"1","task_type":"2","site_id":"1","createtime":"2017-07-10 16:59:18","rules":"{\"allSize\":[[\"37\",\"38\",\"39\",\"37.5\"],[\"49\",\"50\",\"51\",\"72\"]]}","task_url":"http:\/\/www.adidas.com.cn\/bz0402","site_name":"\u963f\u8fea\u8fbe\u65af","t_name":"1185827680@qq.com"}]}
+
+
+
+{
+    "code": 1,
+    "msg": "成功",
+    "data": {
+        "u_id": "9",
+        "t_id": "1",
+        "u_eamil": "leishaofa@yahoo.com",
+        "u_pwd": "aA123456",
+        "mobile": "18827448192",
+        "birthday": "1968-12-30",
+        "firstname": "淳于玲宗",
+        "u_name": "chunyulingzong1968",
+        "u_city": "湖北省",
+        "u_address": "汉阳区长堤街466号附近建华饰品商行靠近(武胜路辅路汉阳造北245米)",
+        "u_addresscode": "420105",
+        "u_field": {
+            "addressremark": {
+                "country": "中国",
+                "province": "湖北省",
+                "city": "武汉市",
+                "district": "汉阳区",
+                "street": "武胜路辅路",
+                "adcode": "420105",
+                "formatted_address": "湖北省武汉市汉阳区武胜路辅路",
+                "sematic_description": "汉阳造北245米"
+            }
+        },
+        "u_site_no": "",
+        "u_site_ok": "",
+        "create_time": "2017-07-14 18:56:37"
+    }
+}
+
+
+订单信息
+1:订单号
+2：商品名称
+3：商品规格
+4：商品款号
+5：价格
+6：数量
+7：快递费
+8：总额
+9：付款链接
+
+物流信息
+10快递公司
+11快递单号
+
+# 7-18任务
+- adidas订单信息(OK)
+- adidas物流信息
+- nike返回付款链接
+
+
+{"code":1,"msg":"\u6210\u529f","data":[{"task_relid":"5","task_id":"0","t_id":"1","status":"1","task_type":"1","site_id":"1","createtime":"2017-07-17 09:56:28","rules":"[]","site_name":"\u963f\u8fea\u8fbe\u65af","t_name":"1185827680@qq.com"}]}
+拉取数据
+{"code":1,"msg":"\u6210\u529f","data":[{"task_relid":"5","task_id":"0","t_id":"1","status":"1","task_type":"1","site_id":"1","createtime":"2017-07-17 09:56:28","rules":"[]","site_name":"\u963f\u8fea\u8fbe\u65af","t_name":"1185827680@qq.com"}]}
+拉取数据
+{"code":1,"msg":"\u6210\u529f","data":[{"task_relid":"5","task_id":"0","t_id":"1","status":"1","task_type":"1","site_id":"1","createtime":"2017-07-17 09:56:28","rules":"[]","site_name":"\u963f\u8fea\u8fbe\u65af","t_name":"1185827680@qq.com"}]}
+拉取数据
+{"code":1,"msg":"\u6210\u529f","data":[{"task_relid":"5","task_id":"0","t_id":"1","status":"1","task_type":"1","site_id":"1","createtime":"2017-07-17 09:56:28","rules":"[]","site_name":"\u963f\u8fea\u8fbe\u65af","t_name":"1185827680@qq.com"}]}
+拉取数据
+{"code":1,"msg":"\u6210\u529f","data":[{"task_relid":"5","task_id":"0","t_id":"1","status":"1","task_type":"1","site_id":"1","createtime":"2017-07-17 09:56:28","rules":"[]","site_name":"\u963f\u8fea\u8fbe\u65af","t_name":"1185827680@qq.com"}]}
